@@ -15,20 +15,26 @@ unsigned __stdcall threadFunc(void * args) {
 
 int main()
 {
-	
 	HANDLE th;
-	unsigned ID;
+	//unsigned ID;
 	int retval;
-	cout << "\nPodaj zwracana wartosc: " << endl;
+	cout << "Podaj zwracana wartosc: " << endl;
 	cin >> retval;
 
-	th = (HANDLE)_beginthreadex(NULL, 0, threadFunc, (void *)retval, 0, &ID);
+	//th = (HANDLE)_beginthreadex(NULL, 0, threadFunc, (void *)retval, 0, &ID);
+	th = (HANDLE)_beginthreadex(NULL, 0, threadFunc, (void *)retval, 0, NULL);
 
 	if (th == 0) {
 		cout << "_beginthreadex failed" << endl;
 		return -1;
 	}
 	cout << "Thread running" << endl;
+	DWORD res = WaitForSingleObject(th, INFINITE);
+	cout << "Wait for thread result: " << res << endl;
+	DWORD dwExit;
+	GetExitCodeThread(th, &dwExit);
+	cout << "Thread exit code was: " << dwExit << endl;
+	/*
 	for (;;) {
 		DWORD dwExit;
 		GetExitCodeThread(th, &dwExit);
@@ -40,10 +46,9 @@ int main()
 			break;
 		}
 	}
+	*/
 	CloseHandle(th);
 	return 0;
-
-
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
