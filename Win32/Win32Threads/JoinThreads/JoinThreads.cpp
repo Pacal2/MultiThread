@@ -29,9 +29,19 @@ int main()
 
 	cout << "Thread running" << endl;
 
-	DWORD res = WaitForMultipleObjects(numberOfThreads, threads, true, INFINITE);
+	int firstThread = 1;
+
+	DWORD start = GetTickCount();
+
+	//DWORD res = WaitForMultipleObjects(numberOfThreads, threads, true, INFINITE);
+	DWORD res = WaitForMultipleObjects(numberOfThreads, threads, true, 250);
+	//DWORD res = WaitForMultipleObjects(firstThread, threads, true, INFINITE);
+
+	DWORD end = GetTickCount();
 
 	cout << "All the threads finished their job" << endl;
+
+	cout << "Program run for: " << (end - start);
 
 	for (int i = 0; i < numberOfThreads; i++) {
 		CloseHandle(threads[i]);
