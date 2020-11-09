@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPTBasic2", "CPPTBasic2\CP
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPTFunObj", "CPPTFunObj\CPPTFunObj.vcxproj", "{41CDC5E2-D69F-4FD7-B1C2-C3DBAE4C0853}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPTSimpleMutex", "CPPTSimpleMutex\CPPTSimpleMutex.vcxproj", "{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{41CDC5E2-D69F-4FD7-B1C2-C3DBAE4C0853}.Release|x64.Build.0 = Release|x64
 		{41CDC5E2-D69F-4FD7-B1C2-C3DBAE4C0853}.Release|x86.ActiveCfg = Release|Win32
 		{41CDC5E2-D69F-4FD7-B1C2-C3DBAE4C0853}.Release|x86.Build.0 = Release|Win32
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Debug|x64.ActiveCfg = Debug|x64
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Debug|x64.Build.0 = Debug|x64
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Debug|x86.ActiveCfg = Debug|Win32
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Debug|x86.Build.0 = Debug|Win32
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Release|x64.ActiveCfg = Release|x64
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Release|x64.Build.0 = Release|x64
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Release|x86.ActiveCfg = Release|Win32
+		{1CBE2FC9-C842-4E08-87EE-ADEE94C5D5E2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

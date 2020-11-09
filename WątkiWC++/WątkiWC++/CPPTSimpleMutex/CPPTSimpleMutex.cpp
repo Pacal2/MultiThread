@@ -16,9 +16,10 @@ public:
 	Worker(int aRank) : rank(aRank) {}
 	void operator()(int alter) {
 		for (int i = 0; i < alter; i++) {
-			mtx.lock();
+			unique_lock<mutex> tlock(mtx);
+		//	mtx.lock();
 			cout << "WRK" << rank << ":: performing iteration " << i << "/" << alter << endl;
-			mtx.unlock;
+		//	mtx.unlock();
 		}
 	}
 };
@@ -26,21 +27,17 @@ public:
 int main()
 {
 	int nThreads;
-
 	cout << "Podaj liczbę wątków: ";
 	cin >> nThreads;
-
 	thread** threads = new thread*[nThreads];
 
 	for (int i = 0; i < nThreads; i++) {
 		threads[i] = new thread(*(new Worker(i)), 10);
 	}
-
 	for (int i = 0; i < nThreads; i++) {
 		threads[i]->join();
 		delete threads[i];
 	}
-
 	delete threads;
 }
 
